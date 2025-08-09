@@ -101,7 +101,7 @@ const Index = () => {
         <section className="container mx-auto px-6 py-16 md:py-24">
           <div className="max-w-3xl">
             <h3 className="font-serif text-3xl md:text-4xl font-semibold mb-4">News & Updates</h3>
-            <p className="text-muted-foreground mb-6">This is a temporary placeholder as we develop our full page. Check our X for updates.</p>
+            <p className="text-muted-foreground mb-6">Stay up to date with announcements and progress. Follow us on X or read our latest updates.</p>
             <div className="flex gap-4">
               <Button asChild variant="outline">
                 <a href="https://x.com/UPraxisOrg" target="_blank" rel="noreferrer">Visit @UPraxisOrg</a>

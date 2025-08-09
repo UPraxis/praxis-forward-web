@@ -24,6 +24,7 @@ const Footer = () => {
         <nav aria-label="Footer navigation" className="space-y-2">
           <a className="story-link block" href="/about">About</a>
           <a className="story-link block" href="/programs">Programs</a>
+          <a className="story-link block" href="/catalog">Catalog</a>
           <a className="story-link block" href="/news">News & Updates</a>
           <a className="story-link block" href="/contact">Contact</a>
         </nav>
