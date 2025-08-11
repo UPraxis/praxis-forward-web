@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "@/assets/logo-upraxis.png";
+import logo from "../../../public/logo-upraxis.png";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import heroImage from "@/assets/hero-upraxis.jpg";
+import heroImage from "../../public/hero-upraxis.jpg";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
