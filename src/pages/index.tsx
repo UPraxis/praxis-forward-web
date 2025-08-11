@@ -17,7 +17,7 @@ const Index = () => {
             name: "University of Praxis",
             url: "/",
             sameAs: [
-              "https://x.com/UPraxisOrg",
+              "upraxis.org",
             ],
             logo: "/src/assets/logo-upraxis.png",
             description: "Built for the Future. A revolutionary model of higher education.",
@@ -45,7 +45,7 @@ const Index = () => {
                 Education is broken. We are building a revolutionary institution for innovators, activists, and visionaries.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Button asChild variant="hero" size="lg">
+                <Button asChild variant="hero" size="lg" className="text-white">
                   <Link to="/programs">Explore Programs</Link>
                 </Button>
                 <Button asChild variant="brand" size="lg">
@@ -67,11 +67,11 @@ const Index = () => {
             </article>
             <aside className="rounded-lg border bg-card/40 p-6 shadow-[var(--shadow-elegant)]">
               <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">Partnership</p>
-              <h4 className="text-xl font-medium mb-3">Praxis Nation</h4>
-              <p className="text-muted-foreground">Together, we’re designing the institutions the future deserves — including the University of Praxis.</p>
+              <h4 className="text-xl font-medium mb-3">Praxis</h4>
+              <p className="text-muted-foreground">The worlds first Digital Nation. And our home.</p>
               <div className="mt-6">
                 <Button asChild variant="outline">
-                  <a href="https://x.com/UPraxisOrg" target="_blank" rel="noreferrer">Follow Updates</a>
+                  <a href="https://x.com/praxisnation" target="_blank" rel="noreferrer">Follow Updates</a>
                 </Button>
               </div>
             </aside>
@@ -84,18 +84,28 @@ const Index = () => {
             <h3 className="font-serif text-3xl md:text-4xl font-semibold mb-10">Why Praxis?</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { title: "Applied Learning", desc: "Learn by building. Projects, apprenticeships, and action over theory alone." },
-                { title: "Mentored Excellence", desc: "Guidance from leaders across disciplines committed to your growth." },
-                { title: "Alternative Model", desc: "Flexible tracks, mastery-based progress, and transparent outcomes." },
+                {
+                  title: "Applied Learning",
+                  desc: "Learn by building. Projects, apprenticeships, and action over theory alone."
+                },
+                {
+                  title: "OM Requirement",
+                  desc: "Take 10 credits in a discipline far from your major, e.g., if you are studying Computer Science, take Philosophy or Sociology."
+                },
+                {
+                  title: "Modernized Liberal Arts",
+                  desc: "Gain a broad view of different fields to grow in general knowledge and critical thinking."
+                },
               ].map((f) => (
-                <article key={f.title} className="rounded-lg border bg-card/40 p-6 hover:shadow-[var(--shadow-glow)] transition-shadow">
-                  <h4 className="text-xl font-medium mb-2">{f.title}</h4>
-                  <p className="text-muted-foreground">{f.desc}</p>
-                </article>
+                  <article key={f.title} className="rounded-lg border bg-card/40 p-6 hover:shadow-[var(--shadow-glow)] transition-shadow">
+                    <h4 className="text-xl font-medium mb-2">{f.title}</h4>
+                    <p className="text-muted-foreground">{f.desc}</p>
+                  </article>
               ))}
             </div>
           </div>
         </section>
+
 
         {/* News preview */}
         <section className="container mx-auto px-6 py-16 md:py-24">

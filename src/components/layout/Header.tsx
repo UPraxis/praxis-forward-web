@@ -18,20 +18,12 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-6">
           <NavLink to="/about" className={navLinkCls} end>About</NavLink>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="text-muted-foreground hover:text-foreground">Programs</DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="z-50 bg-background">
-              <DropdownMenuItem asChild><NavLink to="/programs#tracks" end className={navLinkCls}>Tracks</NavLink></DropdownMenuItem>
-              <DropdownMenuItem asChild><NavLink to="/programs#model" end className={navLinkCls}>Model</NavLink></DropdownMenuItem>
-              <DropdownMenuItem asChild><NavLink to="/programs#apply" end className={navLinkCls}>Apply</NavLink></DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
           <NavLink to="/catalog" className={navLinkCls} end>Catalog</NavLink>
           <NavLink to="/news" className={navLinkCls} end>News</NavLink>
           <NavLink to="/contact" className={navLinkCls} end>Contact</NavLink>
         </div>
         <div className="hidden md:block">
-          <Button asChild variant="brand" size="sm"><Link to="/contact">Apply Now</Link></Button>
+          <Button asChild variant="brand" size="sm"><Link to="/admissions">Apply Now</Link></Button>
         </div>
 
         <div className="md:hidden">
@@ -43,7 +35,7 @@ const Header = () => {
               <DropdownMenuItem asChild><NavLink to="/about" className={navLinkCls} end>About</NavLink></DropdownMenuItem>
               <DropdownMenuItem asChild><NavLink to="/programs" className={navLinkCls} end>Programs</NavLink></DropdownMenuItem>
               <DropdownMenuItem asChild><NavLink to="/catalog" className={navLinkCls} end>Catalog</NavLink></DropdownMenuItem>
-              <DropdownMenuItem asChild><NavLink to="/news" className={navLinkCls} end>News</NavLink></DropdownMenuItem>
+              <DropdownMenuItem asChild><NavLink to="/news" className={navLinkCls} end>Blog</NavLink></DropdownMenuItem>
               <DropdownMenuItem asChild><NavLink to="/contact" className={navLinkCls} end>Contact</NavLink></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

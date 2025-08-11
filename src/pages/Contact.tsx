@@ -12,52 +12,75 @@ const Contact = () => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/movlyazd", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+        },
+        body: formData,
+      });
+
       setLoading(false);
-      toast({ title: "Message sent", description: "Thank you, we'll be in touch." });
-    }, 800);
+
+      if (res.ok) {
+        toast({ title: "Message sent", description: "Thank you, we'll be in touch." });
+        form.reset();
+      } else {
+        const data = await res.json();
+        toast({ title: "Error", description: data.error || "Failed to send message." });
+      }
+    } catch (error) {
+      setLoading(false);
+      toast({ title: "Error", description: "Network error. Please try again." });
+    }
   };
 
   return (
-    <main>
-      <Helmet>
-        <title>Contact — University of Praxis</title>
-        <meta name="description" content="Contact the University of Praxis. Follow social channels or reach out directly." />
-        <link rel="canonical" href="/contact" />
-      </Helmet>
-      <section className="container mx-auto px-6 py-16 md:py-24">
-        <header className="mb-10">
-          <h1 className="font-serif text-4xl md:text-5xl font-semibold">Contact</h1>
-          <p className="text-muted-foreground mt-3 max-w-2xl">For inquiries and early interest, use the form below or connect via social.</p>
-        </header>
+      <main>
+        <Helmet>
+          <title>Contact — University of Praxis</title>
+          <meta name="description" content="Contact the University of Praxis. Follow social channels or reach out directly." />
+          <link rel="canonical" href="/contact" />
+        </Helmet>
+        <section className="container mx-auto px-6 py-16 md:py-24">
+          <header className="mb-10">
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold">Contact</h1>
+            <p className="text-muted-foreground mt-3 max-w-2xl">For inquiries and early interest, use the form below or connect via social.</p>
+          </header>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          <form onSubmit={onSubmit} className="rounded-lg border bg-card/40 p-6 space-y-4">
-            <div>
-              <label className="block text-sm mb-1">Name</label>
-              <Input required name="name" placeholder="Your name" />
-            </div>
-            <div>
-              <label className="block text-sm mb-1">Email</label>
-              <Input required type="email" name="email" placeholder="you@example.com" />
-            </div>
-            <div>
-              <label className="block text-sm mb-1">Message</label>
-              <Textarea required name="message" placeholder="How can we help?" rows={5} />
-            </div>
-            <Button type="submit" variant="brand" disabled={loading}>{loading ? "Sending…" : "Send"}</Button>
-          </form>
+          <div className="grid md:grid-cols-2 gap-10">
+            <form onSubmit={onSubmit} action={"https://formspree.io/f/movlyazd"} method={"POST"} className="rounded-lg border bg-card/40 p-6 space-y-4">
+              <div>
+                <label className="block text-sm mb-1">Name</label>
+                <Input required name="name" placeholder="Your name" />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">Email</label>
+                <Input required type="email" name="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">Message</label>
+                <Textarea required name="message" placeholder="How can we help?" rows={5} />
+              </div>
+              <Button type="submit" variant="brand" disabled={loading}>{loading ? "Sending…" : "Send"}</Button>
+            </form>
 
-          <aside className="rounded-lg border bg-card/40 p-6">
-            <h2 className="text-xl font-medium mb-2">Social & Support</h2>
-            <ul className="text-muted-foreground space-y-2 list-disc pl-5">
-              <li><a className="story-link" href="https://x.com/UPraxisOrg" target="_blank" rel="noreferrer">@UPraxisOrg on X</a></li>
-              <li>Ethereum donations: 0x1deab74402c897C7159051c38DE33d639E7dAB21</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-    </main>
+            <aside className="rounded-lg border bg-card/40 p-6">
+              <h2 className="text-xl font-medium mb-2">Social & Support</h2>
+              <ul className="text-muted-foreground space-y-2 list-disc pl-5">
+                <li><a className="story-link" href="https://x.com/UPraxisOrg" target="_blank" rel="noreferrer">@UPraxisOrg on X</a></li>
+                <li>Ethereum donations: upraxis.eth</li>
+                <li><a className="story-link" href="https://fountain.ink/u/upraxisorg" target="_blank" rel="noreferrer">u/UPraxisOrg on Fountain.Ink</a></li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+      </main>
   );
 };
 
