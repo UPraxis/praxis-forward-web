@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 
 const leaders = [
-  { name: "A. Founder", title: "Founder & Chancellor" },
-  { name: "B. Provost", title: "Provost" },
-  { name: "C. Dean", title: "Dean of Programs" },
+  { name: "Kayla A", title: "Founder & President" },
+  { name: "Matt Robertson", title: "Dean of Business" },
+  { name: "Khamenka OG", title: "Dean of Engineering" },
+  { name: "K.T. Dash", title: "Dean of Liberal Arts" },
 ];
 
 const About = () => {
