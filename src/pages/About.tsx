@@ -35,7 +35,6 @@ const leaders: Leader[] = [
     photo: "/fac-khamemao.jpg",
     socials: {
       x: "https://twitter.com/khamemaog",
-      linkedin: "https://linkedin.com/in/khamenka",
     },
   },
   {
