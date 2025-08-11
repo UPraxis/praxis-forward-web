@@ -150,7 +150,7 @@ const Admissions = () => {
             </span>
                                     </div>
                                     <p className="text-muted-foreground mb-4">
-                                        Join our inaugural cohort of 50 students in a transformative
+                                        Join our inaugural cohort of 300 students in a transformative
                                         learning experience.
                                     </p>
                                     <div className="space-y-2 text-sm text-muted-foreground">
