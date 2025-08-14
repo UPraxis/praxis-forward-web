@@ -46,7 +46,7 @@ const Index = () => {
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Button asChild variant="hero" size="lg" className="text-white">
-                  <Link to="/about">About Us/Link>
+                  <Link to="/about">About Us</Link>
                 </Button>
                 <Button asChild variant="brand" size="lg">
                   <Link to="/admissions">Apply Now</Link>
