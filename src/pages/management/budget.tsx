@@ -24,7 +24,7 @@ const Budget: React.FC = () => {
                 <section className="mt-16">
                     <h2 className="font-serif text-3xl font-semibold mb-6">Financial Overview</h2>
                     <div className="w-full overflow-x-auto border rounded-lg">
-                        <iframe
+                        <iframe>
                             title="University of Praxis Budget"
                             src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQhsyf2vqMr12eOw_Vk-5AHOAW38FxOyZwRShhYzeinW6-mOgNzirIJTMimKEvJKVEWOYaRPN9XGRIC/pubhtml"
                             width="100%"
@@ -32,7 +32,7 @@ const Budget: React.FC = () => {
                             className="rounded-lg"
                             frameBorder="0"
                             allowFullScreen
-                        ></iframe>
+                        </iframe>
                     </div>
                 </section>
             </section>
